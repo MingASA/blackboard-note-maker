@@ -1,0 +1,1669 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: test
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/siliconflow:0.0.15@775950e2071600bd3ba0415ec306c1b1582bc4a2a94688d642f627d112d87cd3
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1750561884076-source-1750649984503-target
+      selected: false
+      source: '1750561884076'
+      sourceHandle: source
+      target: '1750649984503'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: 1750649984503-true-1750649636709-target
+      selected: false
+      source: '1750649984503'
+      sourceHandle: 'true'
+      target: '1750649636709'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1750561884076-source-1750650044644-target
+      selected: false
+      source: '1750561884076'
+      sourceHandle: source
+      target: '1750650044644'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1750650044644-true-1750580906450-target
+      selected: false
+      source: '1750650044644'
+      sourceHandle: 'true'
+      target: '1750580906450'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1750561884076-source-1750650093620-target
+      selected: false
+      source: '1750561884076'
+      sourceHandle: source
+      target: '1750650093620'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 1750650093620-true-1750649025397-target
+      selected: false
+      source: '1750650093620'
+      sourceHandle: 'true'
+      target: '1750649025397'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1750649025397-source-1750561944958-target
+      selected: false
+      source: '1750649025397'
+      sourceHandle: source
+      target: '1750561944958'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1750561944958-source-1750677970313-target
+      selected: false
+      source: '1750561944958'
+      sourceHandle: source
+      target: '1750677970313'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: variable-aggregator
+      id: 1750649636709-source-1750678468427-target
+      selected: false
+      source: '1750649636709'
+      sourceHandle: source
+      target: '1750678468427'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1750580906450-source-1750678460708-target
+      selected: false
+      source: '1750580906450'
+      sourceHandle: source
+      target: '1750678460708'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1750677970313-source-17506546862890-target
+      selected: false
+      source: '1750677970313'
+      sourceHandle: source
+      target: '17506546862890'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1750678460708-source-17506546862890-target
+      selected: false
+      source: '1750678460708'
+      sourceHandle: source
+      target: '17506546862890'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1750678468427-source-17506546862890-target
+      selected: false
+      source: '1750678468427'
+      sourceHandle: source
+      target: '17506546862890'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1750650093620-false-1750679724359-target
+      selected: false
+      source: '1750650093620'
+      sourceHandle: 'false'
+      target: '1750679724359'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1750679724359-source-1750677970313-target
+      selected: false
+      source: '1750679724359'
+      sourceHandle: source
+      target: '1750677970313'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1750649984503-false-17506798315160-target
+      selected: false
+      source: '1750649984503'
+      sourceHandle: 'false'
+      target: '17506798315160'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 17506798315160-source-1750678468427-target
+      selected: false
+      source: '17506798315160'
+      sourceHandle: source
+      target: '1750678468427'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1750650044644-false-17506798213160-target
+      selected: false
+      source: '1750650044644'
+      sourceHandle: 'false'
+      target: '17506798213160'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 17506798213160-source-1750678460708-target
+      selected: false
+      source: '17506798213160'
+      sourceHandle: source
+      target: '1750678460708'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 1750976307834-true-17509763605630-target
+      selected: false
+      source: '1750976307834'
+      sourceHandle: 'true'
+      target: '17509763605630'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: if-else
+      id: 17506546862890-source-1750976307834-target
+      selected: false
+      source: '17506546862890'
+      sourceHandle: source
+      target: '1750976307834'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 17509763605630-source-1750976990135-target
+      selected: false
+      source: '17509763605630'
+      sourceHandle: source
+      target: '1750976990135'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        sourceType: loop-start
+        targetType: code
+      id: 1750991667280start-source-1750991692275-target
+      selected: false
+      source: 1750991667280start
+      sourceHandle: source
+      target: '1750991692275'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        sourceType: code
+        targetType: assigner
+      id: 1750991692275-source-1750991845881-target
+      selected: false
+      source: '1750991692275'
+      sourceHandle: source
+      target: '1750991845881'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        sourceType: assigner
+        targetType: if-else
+      id: 1750991845881-source-1750991901653-target
+      selected: false
+      source: '1750991845881'
+      sourceHandle: source
+      target: '1750991901653'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        sourceType: if-else
+        targetType: loop-end
+      id: 1750991901653-true-1750991932811-target
+      selected: false
+      source: '1750991901653'
+      sourceHandle: 'true'
+      target: '1750991932811'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: loop
+        targetType: end
+      id: 1750991667280-source-1750992145989-target
+      selected: false
+      source: '1750991667280'
+      sourceHandle: source
+      target: '1750992145989'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: variable-aggregator
+      id: 1750976990135-source-1750994093036-target
+      selected: false
+      source: '1750976990135'
+      sourceHandle: source
+      target: '1750994093036'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1750976307834-false-1750994342491-target
+      selected: false
+      source: '1750976307834'
+      sourceHandle: 'false'
+      target: '1750994342491'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: variable-aggregator
+      id: 1750994342491-source-1750994093036-target
+      selected: false
+      source: '1750994342491'
+      sourceHandle: source
+      target: '1750994093036'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: loop
+      id: 1750994093036-source-1750991667280-target
+      selected: false
+      source: '1750994093036'
+      sourceHandle: source
+      target: '1750991667280'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        sourceType: if-else
+        targetType: code
+      id: 1750991901653-false-1751001387624-target
+      source: '1750991901653'
+      sourceHandle: 'false'
+      target: '1751001387624'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        sourceType: code
+        targetType: assigner
+      id: 1751001387624-source-1750992105795-target
+      source: '1751001387624'
+      sourceHandle: source
+      target: '1750992105795'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - image
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          hide: false
+          label: 笔记生成要求
+          max_length: 1000000
+          options: []
+          required: false
+          type: paragraph
+          variable: userinput
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - image
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: 图片集
+          max_length: 10
+          options: []
+          required: false
+          type: file-list
+          variable: input_photo
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - audio
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: 音频
+          max_length: 10
+          options: []
+          required: false
+          type: file-list
+          variable: input_audio
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: 文档
+          max_length: 10
+          options: []
+          required: false
+          type: file-list
+          variable: input_doc
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: 需要整合的笔记
+          max_length: 48
+          options: []
+          required: false
+          type: file
+          variable: input_before
+      height: 193
+      id: '1750561884076'
+      position:
+        x: -1049.2949974729436
+        y: 128.67978884109328
+      positionAbsolute:
+        x: -1049.2949974729436
+        y: 128.67978884109328
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        default_value:
+        - key: text
+          type: string
+          value: 输出异常，请重试。
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params: {}
+          mode: chat
+          name: Pro/deepseek-ai/DeepSeek-V3
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - edition_type: basic
+          id: 366e8e31-55cd-47ee-9be5-34d2b68a12a7
+          role: system
+          text: '请将以下文本列表直接合并为一个连续文本，用换行符分隔各个原列表项：
+
+
+            {{#1750649025397.text#}}
+
+
+            处理要求：
+
+            1. 严格保持原列表项的先后顺序
+
+            2. 每个原列表项之间用换行符\n分隔
+
+            3. 不修改原列表项的任何内容
+
+            4. 不添加任何额外分析或说明'
+        retry_config:
+          max_retries: 1
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        structured_output_enabled: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 155
+      id: '1750561944958'
+      position:
+        x: 170.47380612320393
+        y: -317.4354713497746
+      positionAbsolute:
+        x: 170.47380612320393
+        y: -317.4354713497746
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        default_value:
+        - key: text
+          type: string
+          value: 无法正常识别图片，请上传更为清晰的图片或检查其他错误。
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params: {}
+          mode: chat
+          name: Qwen/Qwen2.5-VL-72B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: f7f9afd5-456a-4be4-9fbb-bf3194766af5
+          role: system
+          text: '请分析提供的图片，识别其中所有的文字内容，并按照它们在图片中出现的顺序进行排列输出。
+
+
+            要求如下：
+
+            保留原始文字内容，不要进行改写或翻译；
+
+            标注每段文字的大致位置（例如“顶部标题”、“左侧说明”、“右下角备注”等），以便体现顺序和排版结构；
+
+            如果图片中包含多列、多段或表格结构，请尽量按照阅读顺序组织输出内容；
+
+            不要遗漏任何可见的文字内容，包括小字、水印、符号等。
+
+            输出格式如下：
+
+            [位置描述]：文字内容
+
+            [位置描述]：文字内容
+
+            ...
+
+            请尽可能详细、准确地完成提取。'
+        retry_config:
+          max_retries: '3'
+          retry_enabled: true
+          retry_interval: '2000'
+        selected: false
+        title: LLM-photo
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+            variable_selector:
+            - '1750561884076'
+            - input_photo
+          enabled: true
+      height: 155
+      id: '1750580906450'
+      position:
+        x: -106.97101258599324
+        y: 38.945416362569915
+      positionAbsolute:
+        x: -106.97101258599324
+        y: 38.945416362569915
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_array_file: true
+        selected: false
+        title: 文档提取器
+        type: document-extractor
+        variable_selector:
+        - '1750561884076'
+        - input_doc
+      height: 91
+      id: '1750649025397'
+      position:
+        x: -241.11192872216319
+        y: -405.84250137155846
+      positionAbsolute:
+        x: -241.11192872216319
+        y: -405.84250137155846
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The audio file to be converted.
+            ja_JP: The audio file to be converted.
+            pt_BR: The audio file to be converted.
+            zh_Hans: 要转换的音频文件。
+          label:
+            en_US: Audio File
+            ja_JP: Audio File
+            pt_BR: Audio File
+            zh_Hans: 音频文件
+          llm_description: The audio file to be converted.
+          max: null
+          min: null
+          name: audio_file
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: file
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: All available ASR models. You can config model in the Model Provider
+              of Settings.
+            ja_JP: All available ASR models. You can config model in the Model Provider
+              of Settings.
+            pt_BR: All available ASR models. You can config model in the Model Provider
+              of Settings.
+            zh_Hans: 所有可用的 ASR 模型。你可以在设置中的模型供应商里配置。
+          label:
+            en_US: Model
+            ja_JP: Model
+            pt_BR: Model
+            zh_Hans: Model
+          llm_description: null
+          max: null
+          min: null
+          name: model
+          options:
+          - label:
+              en_US: FunAudioLLM/SenseVoiceSmall(langgenius/siliconflow/siliconflow)
+              ja_JP: FunAudioLLM/SenseVoiceSmall(langgenius/siliconflow/siliconflow)
+              pt_BR: FunAudioLLM/SenseVoiceSmall(langgenius/siliconflow/siliconflow)
+              zh_Hans: FunAudioLLM/SenseVoiceSmall(langgenius/siliconflow/siliconflow)
+            value: langgenius/siliconflow/siliconflow#FunAudioLLM/SenseVoiceSmall
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          audio_file: ''
+          model: ''
+        provider_id: audio
+        provider_name: audio
+        provider_type: builtin
+        selected: false
+        title: Speech To Text
+        tool_configurations:
+          model: langgenius/siliconflow/siliconflow#FunAudioLLM/SenseVoiceSmall
+        tool_description: 将音频文件转换为文本。
+        tool_label: Speech To Text
+        tool_name: asr
+        tool_parameters:
+          audio_file:
+            type: variable
+            value:
+            - '1750561884076'
+            - input_audio
+        type: tool
+      height: 89
+      id: '1750649636709'
+      position:
+        x: -230.68554065311935
+        y: 331.80537461197616
+      positionAbsolute:
+        x: -230.68554065311935
+        y: 331.80537461197616
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 97789d41-858a-4805-a35f-cea23cc95f51
+            sub_variable_condition:
+              case_id: 6687296c-709f-4413-99bb-f58ac85bf4ff
+              conditions: []
+              logical_operator: and
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - '1750561884076'
+            - input_audio
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 125
+      id: '1750649984503'
+      position:
+        x: -559.2653247354633
+        y: 423.90513588852957
+      positionAbsolute:
+        x: -559.2653247354633
+        y: 423.90513588852957
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 762a6b6a-ca17-493a-be2e-ae6aae601de2
+            sub_variable_condition:
+              case_id: 1e8e14c4-b826-42f2-83af-3f401005b585
+              conditions: []
+              logical_operator: and
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - '1750561884076'
+            - input_photo
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 2
+        type: if-else
+      height: 125
+      id: '1750650044644'
+      position:
+        x: -559.2653247354633
+        y: 128.67978884109328
+      positionAbsolute:
+        x: -559.2653247354633
+        y: 128.67978884109328
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 044be4ff-6668-46a4-a21f-87b5b64c5e68
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - '1750561884076'
+            - input_doc
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 3
+        type: if-else
+      height: 125
+      id: '1750650093620'
+      position:
+        x: -559.2653247354633
+        y: -112.16173846315222
+      positionAbsolute:
+        x: -559.2653247354633
+        y: -112.16173846315222
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        default_value:
+        - key: text
+          type: string
+          value: 输出异常，请重试。
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params: {}
+          mode: chat
+          name: Pro/deepseek-ai/DeepSeek-V3
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - edition_type: basic
+          id: 366e8e31-55cd-47ee-9be5-34d2b68a12a7
+          role: system
+          text: "你是一个专业的笔记整理助手，负责将课堂板书（文字版）转换为结构清晰、易于理解的笔记。请以 {{#1750561884076.userinput#}}\
+            \ 为要求，并在此基础上按下列要求处理输入的文本内容：\n## 输入\n输入**可能**有三部分，你需要将三部分整合，合并整理其中相似部分，分别保留不同部分。（注意：如果某个输入为空，请你忽略）\n\
+            输入1：{{#1750677970313.output#}}\n输入2：{{#1750678460708.output#}}\n输入3：{{#1750678468427.output#}}\n\
+            ## 输出要求\n- 逻辑分段：根据内容主题自然划分段落，确保每段只讨论一个核心点。\n- 将结果中所有 \\[ 和 \\] 替换为 $$。\n\
+            - 重点标注：\n使用 加粗 或 高亮 标记关键术语、定义、公式。\n用 > 引用教师强调的注意事项或例子。\n- 结构化排版：\n - 标题分级（如 ##\
+            \ 1. 主题、### 1.1 子主题）。\n - 列表项用 - 或数字序号排列。\n- 补充说明（可选）：\n对复杂概念添加简短的注释（格式：注：...）。\n\
+            用表格对比关联内容（如分类、优缺点）。\n\n## 示例输出模板\n```markdown\n### 1. 主题名称  \n- **核心概念**：定义或解释。\
+            \  \n> 教师示例：具体案例或应用场景。  \n\n#### 1.1 子主题  \n- 要点1：说明。  \n- 要点2：说明。  \n\
+            注：此处补充背景知识或常见误区。  \n\n### 2. 对比分析  \n| 类型 | 特点 | 适用场景 |  \n|------|------|----------|\
+            \  \n| A    | ...  | ...      |  \n```\n\n注意：保持内容简洁，避免冗余，优先保留教师原意！"
+        - id: 727551aa-62e6-4609-a0a1-e47cc22f3edd
+          role: user
+          text: ''
+        retry_config:
+          max_retries: '3'
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        structured_output_enabled: false
+        title: LLM2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 155
+      id: '17506546862890'
+      position:
+        x: 1136.6459986410493
+        y: 181.70650087432995
+      positionAbsolute:
+        x: 1136.6459986410493
+        y: 181.70650087432995
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        output_type: string
+        selected: false
+        title: 变量聚合器
+        type: variable-aggregator
+        variables:
+        - - '1750561944958'
+          - text
+        - - '1750679724359'
+          - result
+      height: 130
+      id: '1750677970313'
+      position:
+        x: 838.9290088846527
+        y: -112.16173846315222
+      positionAbsolute:
+        x: 838.9290088846527
+        y: -112.16173846315222
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        output_type: string
+        selected: false
+        title: 变量聚合器 2
+        type: variable-aggregator
+        variables:
+        - - '1750580906450'
+          - text
+        - - '17506798213160'
+          - result
+      height: 130
+      id: '1750678460708'
+      position:
+        x: 526.7376409115342
+        y: 138.48437424419487
+      positionAbsolute:
+        x: 526.7376409115342
+        y: 138.48437424419487
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        output_type: string
+        selected: false
+        title: 变量聚合器 3
+        type: variable-aggregator
+        variables:
+        - - '17506546870550'
+          - text
+        - - '17506798315160'
+          - result
+      height: 130
+      id: '1750678468427'
+      position:
+        x: 709.6645347164363
+        y: 410.6310595202599
+      positionAbsolute:
+        x: 709.6645347164363
+        y: 410.6310595202599
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main() -> dict:\r\n    return {\r\n        \"result\": \"（内容可能为空）\"\
+          ,\r\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行
+        type: code
+        variables: []
+      height: 53
+      id: '1750679724359'
+      position:
+        x: 131.99761282562474
+        y: -112.16173846315222
+      positionAbsolute:
+        x: 131.99761282562474
+        y: -112.16173846315222
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main() -> dict:\r\n    return {\r\n        \"result\": \"（内容可能为空）\"\
+          ,\r\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 (1)
+        type: code
+        variables: []
+      height: 53
+      id: '17506798213160'
+      position:
+        x: 143.78119570583442
+        y: 235.92224776545208
+      positionAbsolute:
+        x: 143.78119570583442
+        y: 235.92224776545208
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main() -> dict:\r\n    return {\r\n        \"result\": \"（内容可能为空）\"\
+          ,\r\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 (1)
+        type: code
+        variables: []
+      height: 53
+      id: '17506798315160'
+      position:
+        x: 63.603696647092306
+        y: 499.1464899583036
+      positionAbsolute:
+        x: 63.603696647092306
+        y: 499.1464899583036
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: exists
+            id: dccaf0af-3cc0-411d-9634-f879f02161b1
+            value: ''
+            varType: file
+            variable_selector:
+            - '1750561884076'
+            - input_before
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 4
+        type: if-else
+      height: 125
+      id: '1750976307834'
+      position:
+        x: 1525.0295377896214
+        y: 181.70650087432995
+      positionAbsolute:
+        x: 1525.0295377896214
+        y: 181.70650087432995
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_array_file: false
+        selected: false
+        title: 文档提取器 (1)
+        type: document-extractor
+        variable_selector:
+        - '1750561884076'
+        - input_before
+      height: 91
+      id: '17509763605630'
+      position:
+        x: 1776.927627647915
+        y: 71.78385718157821
+      positionAbsolute:
+        x: 1776.927627647915
+        y: 71.78385718157821
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: Pro/deepseek-ai/DeepSeek-V3
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 268ce252-a654-4d5d-bbbc-3b95d75b0faa
+          role: system
+          text: '你是一个专业的笔记整理助手，负责将每次新上课记的笔记整合到原有的笔记当中，请按下列要求处理输入的文本内容：
+
+            ## 输入
+
+            新笔记：{{#17506546862890.text#}}
+
+            原有笔记：{{#17509763605630.text#}}
+
+            ## 输出要求
+
+            - 请将新笔记整合到原有笔记中，需严格保留原有笔记和新笔记的核心内容与表述，仅添加必要的编号和目录，不做其他内容改动。​
+
+            - 为所有知识点进行独立编号，编号格式采用 “1.、1.1、1.1.1” 这样的层级结构，确保每个知识点都有唯一编号，逻辑清晰。​
+
+            - 在笔记开头生成自动生成目录，目录需包含所有知识点编号及对应标题，方便快速定位。​
+
+            - 整合时，将新笔记内容合理插入到原有笔记对应或相关的知识点部分，若没有对应知识点，则在合适位置新增知识点进行插入。'
+        selected: false
+        title: LLM 4
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1750976990135'
+      position:
+        x: 2065.1047393040735
+        y: 71.78385718157821
+      positionAbsolute:
+        x: 2065.1047393040735
+        y: 71.78385718157821
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        break_conditions:
+        - comparison_operator: is
+          id: b7f53100-c9af-434b-a0ac-5d79d2aa75c0
+          value: 是
+          varType: string
+          variable_selector:
+          - '1750991667280'
+          - pure_markdown
+        desc: ''
+        error_handle_mode: terminated
+        height: 401
+        logical_operator: and
+        loop_count: 3
+        loop_variables:
+        - id: 901e8328-c6ab-4631-afa0-7c88cc7394f3
+          label: pure_markdown
+          value:
+          - '1750994093036'
+          - output
+          value_type: variable
+          var_type: string
+        - id: 74c1a513-8a86-4c12-9da7-d737ab95ce65
+          label: cur_text
+          value:
+          - '1750994093036'
+          - output
+          value_type: variable
+          var_type: string
+        selected: false
+        start_node_id: 1750991667280start
+        title: 循环
+        type: loop
+        width: 980.9392149142641
+      height: 401
+      id: '1750991667280'
+      position:
+        x: 2653.278538966464
+        y: 181.70650087432995
+      positionAbsolute:
+        x: 2653.278538966464
+        y: 181.70650087432995
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 981
+      zIndex: 1
+    - data:
+        desc: ''
+        isInLoop: true
+        selected: false
+        title: ''
+        type: loop-start
+      draggable: false
+      height: 48
+      id: 1750991667280start
+      parentId: '1750991667280'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 2677.278538966464
+        y: 249.70650087432995
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-loop-start
+      width: 44
+      zIndex: 1002
+    - data:
+        code: "def markdown_validator(text: str) -> bool:\n    \"\"\"\n    严格验证Markdown语法合规性\n\
+          \    返回True表示完全合规，False表示存在语法错误\n    \n    验证规则:\n    1. 必须包含至少一个一级标题\n\
+          \    2. 列表必须正确嵌套和缩进\n    3. 链接和图片语法必须完整\n    4. 代码块必须成对出现\n    5. 高级语法(上标、下标、表格、引用)必须符合规范\n\
+          \    6. 段落之间必须有空行分隔\n    \"\"\"\n    import re\n    \n    # 空文档检查\n    if\
+          \ not text.strip():\n        return False\n    \n    # 基础结构验证 (必须有至少一个一级标题)\n\
+          \    if not re.search(r'^#\\s+.+$', text, re.MULTILINE):\n        return\
+          \ False\n    \n    # 段落分隔验证 (段落之间必须有空行)\n    lines = text.split('\\n')\n\
+          \    in_paragraph = False\n    for i, line in enumerate(lines):\n      \
+          \  if line.strip() and not re.match(r'^\\s*(#|>|\\d+\\.|[-*+]|```|\\|)',\
+          \ line):\n            if in_paragraph and i > 0 and lines[i-1].strip() ==\
+          \ '':\n                return False  # 段落之间缺少空行\n            in_paragraph\
+          \ = True\n        else:\n            in_paragraph = False\n    \n    # 列表格式验证\
+          \ (有序/无序列表需正确嵌套)\n    list_pattern = r'^(\\s*[-*+]|\\s*\\d+\\.)\\s+\\S+'\n\
+          \    if re.search(list_pattern, text, re.MULTILINE):\n        lines = text.split('\\\
+          n')\n        list_stack = []\n        \n        for line in lines:\n   \
+          \         list_match = re.match(list_pattern, line)\n            if list_match:\n\
+          \                current_indent = len(re.match(r'\\s*', line).group(0))\n\
+          \                # 检查缩进是否匹配当前列表层级\n                if list_stack:\n    \
+          \                if current_indent > list_stack[-1] + 4:\n             \
+          \           return False\n                    elif current_indent < list_stack[-1]:\n\
+          \                        # 缩进减少必须匹配之前的层级\n                        if current_indent\
+          \ not in list_stack:\n                            return False\n       \
+          \         list_stack.append(current_indent)\n            elif line.strip()\
+          \ and list_stack:\n                # 列表中间出现其他内容需空行分隔\n                if\
+          \ not re.match(r'^\\s*$', line):\n                    return False\n   \
+          \             list_stack = []\n    \n    # 链接语法验证\n    if '](' in text:\n\
+          \        for match in re.finditer(r'\\[.*?\\]\\(.*?\\)', text):\n      \
+          \      link_text, link_url = match.group(0).split('](', 1)\n           \
+          \ if not link_text.startswith('[') or not link_url.endswith(')'):\n    \
+          \            return False\n            if len(link_text) < 2 or len(link_url)\
+          \ < 2:  # 空内容检查\n                return False\n    \n    # 图片语法验证\n    if\
+          \ '![' in text:\n        for match in re.finditer(r'!\\[.*?\\]\\(.*?\\)',\
+          \ text):\n            alt_text, img_url = match.group(0).split('](', 1)\n\
+          \            if not alt_text.startswith('![') or not img_url.endswith(')'):\n\
+          \                return False\n            if len(alt_text) < 3 or len(img_url)\
+          \ < 2:  # 空内容检查\n                return False\n    \n    # 代码块闭合验证\n   \
+          \ if '```' in text:\n        code_blocks = re.findall(r'```', text)\n  \
+          \      if len(code_blocks) % 2 != 0:\n            return False\n       \
+          \ # 检查代码块语言声明\n        for match in re.finditer(r'^```[a-zA-Z0-9]*$', text,\
+          \ re.MULTILINE):\n            if not re.search(r'^```[a-zA-Z0-9]+\\s*$',\
+          \ match.group(0)):\n                return False\n    \n    # 高级语法验证\n \
+          \   if '^' in text:\n        if not re.findall(r'\\^\\w+\\^', text):  #\
+          \ 上标\n            return False\n    if '~' in text:\n        if not re.findall(r'~\\\
+          w+~', text):    # 下标\n            return False\n    if '|' in text:\n  \
+          \      # 简单表格验证\n        table_lines = [line for line in lines if '|' in\
+          \ line and '--' in line]\n        if len(table_lines) > 1:\n           \
+          \ if not re.search(r'^\\|[-:\\s]+\\|$', table_lines[1]):  # 表头分隔线\n    \
+          \            return False\n    if '>' in text:\n        # 引用块验证\n      \
+          \  in_block = False\n        for line in lines:\n            if line.startswith('>'):\n\
+          \                in_block = True\n            elif line.strip() and in_block:\n\
+          \                if not line.startswith(' ') and not line.startswith('>'):\n\
+          \                    return False\n    \n    # 转义字符验证\n    if '\\\\' in\
+          \ text:\n        for match in re.finditer(r'\\\\.', text):\n           \
+          \ if match.group(0)[1] not in r'\\`*_{}[]()#+-.!|~^':\n                return\
+          \ False\n    \n    # 最终通过校验\n    return True\n\n\ndef main(params: dict\
+          \ = None, **kwargs) -> dict:\n    \"\"\"\n    Dify 标准入口函数\n    输入: {\"text\"\
+          : \"待验证内容\"} 或直接传递text参数\n    输出: {\"result\": \"是否有效\", \"debug_info\"\
+          : {...}}\n    \"\"\"\n    # 合并参数\n    if params is None:\n        params\
+          \ = kwargs\n    elif kwargs:\n        params.update(kwargs)\n    \n    text\
+          \ = params.get(\"text\", \"\")\n    try:\n        is_valid = markdown_validator(text)\n\
+          \        return {\n            \"result\": \"是\" if is_valid else \"否\"\n\
+          \        }\n        \n    except Exception as e:\n        return {\n   \
+          \         \"result\": \"否\",\n        }\n\n\n# 正则表达式预编译\nimport re"
+        code_language: python3
+        desc: 检测输出是否为正确markdown格式
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 验证markdown
+        type: code
+        variables:
+        - value_selector:
+          - '1750991667280'
+          - cur_text
+          variable: text
+      height: 81
+      id: '1750991692275'
+      parentId: '1750991667280'
+      position:
+        x: 119.10351600382728
+        y: 66.31790116362066
+      positionAbsolute:
+        x: 2772.3820549702914
+        y: 248.0244020379506
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1750991692275'
+          - result
+          variable_selector:
+          - '1750991667280'
+          - pure_markdown
+          write_mode: over-write
+        loop_id: '1750991667280'
+        selected: false
+        title: 变量赋值
+        type: assigner
+        version: '2'
+      height: 87
+      id: '1750991845881'
+      parentId: '1750991667280'
+      position:
+        x: 424.421417167448
+        y: 65
+      positionAbsolute:
+        x: 3077.699956133912
+        y: 246.70650087432995
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: cea26978-6ced-4399-8813-85c986ead0cf
+            value: 是
+            varType: string
+            variable_selector:
+            - '1750991667280'
+            - pure_markdown
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        selected: false
+        title: 条件分支 5
+        type: if-else
+      height: 125
+      id: '1750991901653'
+      parentId: '1750991667280'
+      position:
+        x: 116.42141716744845
+        y: 198.99999999999977
+      positionAbsolute:
+        x: 2769.6999561339126
+        y: 380.7065008743297
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        selected: false
+        title: 退出循环
+        type: loop-end
+      height: 53
+      id: '1750991932811'
+      parentId: '1750991667280'
+      position:
+        x: 420.42141716744845
+        y: 198.99999999999977
+      positionAbsolute:
+        x: 3073.6999561339126
+        y: 380.7065008743297
+      sourcePosition: right
+      targetPosition: left
+      type: custom-simple
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1751001387624'
+          - result
+          variable_selector:
+          - '1750991667280'
+          - cur_text
+          write_mode: over-write
+        loop_id: '1750991667280'
+        selected: false
+        title: 变量赋值 2
+        type: assigner
+        version: '2'
+      height: 87
+      id: '1750992105795'
+      parentId: '1750991667280'
+      position:
+        x: 720.9392149142641
+        y: 279.812292113854
+      positionAbsolute:
+        x: 3374.217753880728
+        y: 461.518792988184
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1750991667280'
+          - cur_text
+          variable: cur_text
+        selected: false
+        title: 结束
+        type: end
+      height: 89
+      id: '1750992145989'
+      position:
+        x: 3675.1264265739496
+        y: 181.70650087432995
+      positionAbsolute:
+        x: 3675.1264265739496
+        y: 181.70650087432995
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        output_type: string
+        selected: false
+        title: 变量聚合器 4
+        type: variable-aggregator
+        variables:
+        - - '1750976990135'
+          - text
+        - - '1750994342491'
+          - result
+      height: 130
+      id: '1750994093036'
+      position:
+        x: 2333.994845252577
+        y: 196.5538929115774
+      positionAbsolute:
+        x: 2333.994845252577
+        y: 196.5538929115774
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "\ndef main(text: str) -> dict:\n    return {\n        \"result\": text\n\
+          \    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 5
+        type: code
+        variables:
+        - value_selector:
+          - '17506546862890'
+          - text
+          variable: text
+      height: 53
+      id: '1750994342491'
+      position:
+        x: 1930.6657740959654
+        y: 262.443436400225
+      positionAbsolute:
+        x: 1930.6657740959654
+        y: 262.443436400225
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def format_markdown(text: str) -> str:\n    \"\"\"\n    修改markdown文本格式使其符合验证规则\n\
+          \    \n    处理步骤:\n    1. 确保至少有一个一级标题\n    2. 修正列表嵌套和缩进\n    3. 确保链接和图片语法完整\n\
+          \    4. 确保代码块成对出现\n    5. 修正高级语法格式\n    6. 确保段落之间有空行分隔\n    \"\"\"\n   \
+          \ lines = text.split('\\n')\n    result = []\n    last_line_was_blank =\
+          \ True\n    \n    # 1. 确保至少有一个一级标题\n    has_h1 = any(line.startswith('#\
+          \ ') for line in lines)\n    if not has_h1:\n        if lines and lines[0].strip():\n\
+          \            result.append('# ' + lines[0].strip())\n            result.append('')\n\
+          \            lines = lines[1:]\n        else:\n            result.append('#\
+          \ 文档标题')\n            result.append('')\n    \n    # 处理段落和列表\n    in_list\
+          \ = False\n    list_indent = 0\n    in_code_block = False\n    \n    for\
+          \ i, line in enumerate(lines):\n        stripped = line.strip()\n      \
+          \  \n        # 处理代码块\n        if stripped.startswith('```'):\n         \
+          \   in_code_block = not in_code_block\n            result.append(line)\n\
+          \            last_line_was_blank = False\n            continue\n       \
+          \ \n        if in_code_block:\n            result.append(line)\n       \
+          \     continue\n        \n        # 空行处理\n        if not stripped:\n   \
+          \         if not last_line_was_blank:\n                result.append('')\n\
+          \                last_line_was_blank = True\n            in_list = False\n\
+          \            continue\n        \n        # 列表处理\n        list_match = re.match(r'^(\\\
+          s*)([-*+]|\\d+\\.)\\s+', line)\n        if list_match:\n            current_indent\
+          \ = len(list_match.group(1))\n            if in_list and current_indent\
+          \ > list_indent + 4:\n                # 修正过大的缩进\n                line =\
+          \ ' ' * (list_indent + 4) + line.lstrip()\n            elif in_list and\
+          \ current_indent < list_indent:\n                # 确保缩进对齐\n            \
+          \    line = ' ' * list_indent + line.lstrip()\n            \n          \
+          \  list_indent = len(re.match(r'^\\s*', line).group(0))\n            in_list\
+          \ = True\n        else:\n            in_list = False\n        \n       \
+          \ # 确保段落之间有空白行\n        is_paragraph = (stripped and \n                \
+          \       not re.match(r'^\\s*(#|>|\\d+\\.|[-*+]|```|\\|)', line) and\n  \
+          \                     not last_line_was_blank)\n        \n        if is_paragraph:\n\
+          \            result.append('')\n        \n        # 处理链接和图片\n        if\
+          \ '](' in line:\n            line = re.sub(r'\\[(.*?)\\]\\((.*?)\\)', \n\
+          \                         lambda m: f'[{m.group(1)}]({m.group(2)})' if m.group(1)\
+          \ and m.group(2) else m.group(0),\n                         line)\n    \
+          \    \n        if '![' in line:\n            line = re.sub(r'!\\[(.*?)\\\
+          ]\\((.*?)\\)', \n                         lambda m: f'![{m.group(1)}]({m.group(2)})'\
+          \ if m.group(1) and m.group(2) else m.group(0),\n                      \
+          \   line)\n        \n        # 处理高级语法\n        if '^' in line:\n       \
+          \     line = re.sub(r'\\^(\\w+)\\^', r'^\\1^', line)\n        if '~' in\
+          \ line:\n            line = re.sub(r'~(\\w+)~', r'~\\1~', line)\n      \
+          \  \n        # 处理dollar符号和汉字之间的空格\n        if '$' in line:\n           \
+          \ # 在dollar符号前面添加空格，如果前面是汉字的话\n            line = re.sub(r'([\\u4e00-\\\
+          u9fff])\\$', r'\\1 $', line)\n            # 在dollar符号后面添加空格，如果后面是汉字的话\n\
+          \            line = re.sub(r'\\$([\\u4e00-\\u9fff])', r'$ \\1', line)\n\
+          \        \n        result.append(line)\n        last_line_was_blank = False\n\
+          \    \n    # 确保代码块闭合\n    code_blocks = re.findall(r'```', '\\n'.join(result))\n\
+          \    if len(code_blocks) % 2 != 0:\n        result.append('```')\n    \n\
+          \    # 重新组合并返回\n    formatted_text = '\\n'.join(result)\n    \n    # 最终清理多余空行\n\
+          \    formatted_text = re.sub(r'\\n{3,}', '\\n\\n', formatted_text)\n   \
+          \ \n    return formatted_text\n\n\ndef main(params: dict = None, **kwargs)\
+          \ -> dict:\n    \"\"\"\n    Dify 标准入口函数\n    输入: {\"text\": \"待验证内容\"} 或直接传递text参数\n\
+          \    输出: {\"result\": \"格式化后的markdown文本\", \"is_valid\": bool}\n    \"\"\
+          \"\n    # 合并参数\n    if params is None:\n        params = kwargs\n    elif\
+          \ kwargs:\n        params.update(kwargs)\n    \n    text = params.get(\"\
+          text\", \"\")\n    try:\n        formatted_text = format_markdown(text)\n\
+          \        is_valid = markdown_validator(formatted_text)\n        \n     \
+          \   return {\n            \"result\": formatted_text\n        }\n      \
+          \  \n    except Exception as e:\n        return {\n            \"result\"\
+          : text\n        }\n\n\n# 正则表达式预编译\nimport re"
+        code_language: python3
+        desc: ''
+        isInIteration: false
+        isInLoop: true
+        loop_id: '1750991667280'
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 6
+        type: code
+        variables:
+        - value_selector:
+          - '1750991667280'
+          - cur_text
+          variable: text
+      height: 53
+      id: '1751001387624'
+      parentId: '1750991667280'
+      position:
+        x: 420.42141716744845
+        y: 291.87055056329586
+      positionAbsolute:
+        x: 3073.6999561339126
+        y: 473.5770514376258
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    viewport:
+      x: 371.46437350483393
+      y: 328.1919370742612
+      zoom: 0.25
