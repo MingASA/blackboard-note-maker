@@ -1,6 +1,7 @@
 # 📚 板书知识整理助手 - Test
 本项目是一个基于人工智能的板书知识整理工具，能够自动识别和处理各种格式的教学内容，生成结构清晰、格式规范的Markdown笔记。
 
+ [网页访问点这里](https://udify.app/workflow/bC0JxE2hEysJrW8w)
 ## 🌟 核心功能
 ### 多模态输入处理
 - **图像识别**：支持JPG, JPEG, PNG, GIF, WEBP, SVG格式的板书图片
